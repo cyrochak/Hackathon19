@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Farmer Life Savor </title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="c3-0.6.12/c3.js"></script>
+  <link rel="stylesheet" type="text/css" href="c3-0.6.12/c3.css">
+</head>
+
+<body>
+  <div class="nav">
+    <a class="active" href="#Home"> Home</a>
+    <a href="#dataVis"> Visualization </a>
+    <a href="#DecisionMak"> How to prevent </a>
+    <a href="#Suggestion"> Suggestion </a>
+    <a href="#Contact"> Contact us </a>
+  </div>
+  <script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("nav");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+  <div id = "Home">
+  <div class="PhotoShow" style=" height:100%" align="middle">
+    <img class="Slides" src="crop1.jpg" align="middle" style="width:100%">
+    <img class="Slides" src="crop2.jpg" style="width:100%" align="middle">
+    <img class="Slides" src="crop3.jpg" style="width:100%" align="middle">
+    <img class="Slides" src="crop4.jpg" style="width:100%" align="middle">
+    <div class ="par-text">
+      <h1> <strong>Super Hack for Agricultural Farmers </h1>
+      </div>
+  </div>
+</div>
+
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("Slides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 3000); // Change image every 2 seconds
+    }
+
+    </script>
+
+  <h4>
+    <p> In the current atmosphere of agricultural industry, many farmers are
+      trying to adapt new technology to increase their productivity of making profits from
+      farming crops. However, despite the fact that technology has already helped them
+      eliminate a lot of problems, there are still existed some uncertain circumstances,
+      and they are forced to face some depressing issues regarding to weather issues.
+      With Cargill,they have provided solutions to farmers at all levels of productivity
+      to provide a more reliable and sustainable resources. And WE, we will now introduce
+      our solution for you out there who are struggle with farming in unpredictable weather.
+      This hack will provide you a solution for you to plan on your schedule about farming.
+    </p>
+  </h4>
+  <div id="dataVis">
+    <br><br><br>
+    <center>
+      <h1>How Weather is Affecting Your Farm?</h1>
+    </center>
+    <br>
+  </div>
+  <div id="chart"></div>
+  <div id="chartAnalysis">
+    <br >
+    <p>This is important to understand how weather and climate could affect crop
+      fields and even food production. Temperature, rainfall, humidity and wind
+      speed are all factors that affect the soil temperature and the ability of
+      crops to maximize their potential harvest.
+      Soil temperature corresponds to the speed of plant growth. The time to warm
+      up or cool down soil may vary depending on what types of soil we are using.
+      Therefore, it is important to get to understand your farming methods.
+     </p>
+  </div>
+  <script>
+   var chart = c3.generate({
+     bindto: '#chart',
+     data: {
+       columns: [
+
+         ['temp', 0, 2, 6, 13, 18, 22, 30, 32, 22, 18, 10, 3],
+         ['rain', 0, 10, 8, 20, 30, 26, 37, 26, 75, 85, 53, 32],
+         ['wind', 8, 10, 7, 5, 6, 6, 5, 2, 3, 4, 6, 9],
+         ['humidity', 8, 10, 12, 15, 25, 20, 30, 28, 50, 40, 20, 10]
+       ]
+     }
+   });
+ </script>
+  <div id = "DecisionMak">
+    <br><br><br>
+  <h2 id = DecisionMak> Let's try out our prediction </h2>
+  <h3> <strong> The Size of Your Farm </strong> </h3>
+  <form action""method = "get" >
+  <div class="row">
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" value = '1' id="Size1"><img src="farm1.jpeg" alt="1- 100 acres Farm" style="width:100%"></label>
+      </div>
+      <div class="text-block">
+        <p> 1-100 acres </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" value = '1'id="Size2"><img src="farm2.jpeg" alt="101-300 acres Farm" style="width:100%">
+      </div>
+      <div class="text-block">
+        <p> 101-300 acres </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" value = '1'id="Size3"><img src="farm3.jpeg" alt="301-900 acres Farm" style="width:100%">
+      </div>
+      <div class="text-block">
+        <p> 301-900 acres </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" value = '1'id="Size4"><img src="farm4.jpeg" alt="901 acres or above Farm" style="width:100%">
+      </div>
+      <div class="text-block">
+        <p> 900+ acres </p>
+      </div>
+    </div>
+  </div>
+  <h3> <strong> Numbers of Crops you planted </strong> </h3>
+  <div class="row">
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" id="No1">0-10 types of crop</label>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" id="No2">11- 15 types of crop</label>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox">
+        <label><input type="checkbox" id="No3">15-20 types of crop</label>
+      </div>
+    </div>
+    <div class="column">
+      <div class="checkbox ">
+        <label><input type="checkbox" id="No4">20+ types of crop</label>
+      </div>
+    </div>
+  </div>
+  <h3> <strong> Months which you go to Harvest </strong> </h3>
+
+    <div class = "row">
+      <div class = "monthcolumn">
+    <label><input type = "checkbox" id= "Jan" checked> January</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Feb" checked> <label>February</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Mar" checked> <label>March</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Apr" checked> <label>April</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "May" checked> <label>May</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Jun" checked> <label>June</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Jul" checked> <label>July</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Aug" checked> <label>August</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Sept" checked> <label>September</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Oct" checked> <label>October</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Nov" checked> <label>November</label>
+  </div>
+  <div class = "monthcolumn">
+    <input type = "checkbox" id= "Dec" checked> <label>December</label>
+  </div>
+
+</div>
+
+  <h3> <strong> Types of Soil </string> </h3>
+      <div class = "row">
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Loam"> Loam</label>
+      </div>
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Clay"> Clay </label>
+</div>
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Sand"> Sand </label>
+        </div>
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Silt">Silt </label>
+        </div>
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Peat"> Peat</label>
+        </div>
+          <div class="soilcolumn">
+        <label><input type = "checkbox" id = "Chalk"> Chalk</label> <br> <br>
+        </div>
+      </div>
+
+         <button type="button" onclick="submitFun()">Submit!</button>
+         <div id="result5"> <p> As for your information that is given, there is a great possibility that
+           your farm are not sufficient and are not in the maximum profitibility. As an owner of
+           small to medium farm, you should focus small amount of types of crop that you are
+           farming. It would benefit the farm more and have a more sustainable farm in the future.</p></div>
+     <div id="result15"><p> As for your information that you have provided, we are expected you have a decent
+     farm area in the farm, and you do not own extra amount of crops. However, you might
+   focus on working on more balancing the amount that you are harvesting and how you
+ would be benefical to the farm.</p></div>
+     <div id="result25">  <p> As the result, you have a quite excellent farmers among the all. The only
+         minus side is that you did not utilize the whole harvesting seasons in order to
+         get your maximum profits from your crops. You might have wasted extra principal
+         on something that you should not be using on. Keep going and you will be one of
+         the greatest farmers in the world! </p></div>
+     <div id="result">
+       <p> <strong><em> Congratulations </em></strong> You have become one of the best
+       farmers and earning the maximum amount of profits that you could have done.
+       For now, we do not have more suggestion for you to improve your profit. However,
+       if you are looking for increase it, you should contact some agricultural company
+       such as cargill to provide better technology to improve your profit. Feel free
+       to share your experience to the community so that everyone can learn the way to
+       be like you! </p>
+       <h2> -- Links to our best community  -- </h2>
+       <a href = "#Suggestion"> <img src = "community.jpg"</a>
+     </div>
+         <script>
+
+         function submitFun(){
+           var count =0;
+      if (document.getElementById("Size1").checked){
+        count+=0;
+      }
+      if (document.getElementById("Size2").checked){
+        count+=1;
+      }
+      if (document.getElementById("Size3").checked){
+        count+=2;
+      }
+      if (document.getElementById("Size4").checked){
+        count+=3;
+      }
+
+      if (document.getElementById("No1").checked){
+        count+=3;
+      }
+      if (document.getElementById("No2").checked){
+        count+=2;
+      }
+      if (document.getElementById("No2").checked){
+        count+=1;
+      }
+      if (document.getElementById("No3").checked){
+        count+=0;
+      }
+
+      if (document.getElementById("Jan").checked){
+        count+=0;
+      }
+      if (document.getElementById("Feb").checked){
+        count+=0;
+      }
+      if (document.getElementById("Mar").checked){
+        count+=0;
+      }
+      if (document.getElementById("Apr").checked){
+        count+=1;
+      }
+      if (document.getElementById("May").checked){
+        count+=1;
+      }
+      if (document.getElementById("Jun").checked){
+        count+=1;
+      }
+      if (document.getElementById("Jul").checked){
+        count+=2;
+      }
+      if (document.getElementById("Aug").checked){
+        count+=2;
+      }
+      if (document.getElementById("Sept").checked){
+        count+=3;
+      }
+      if (document.getElementById("Oct").checked){
+        count+=3;
+      }
+      if (document.getElementById("Nov").checked){
+        count+=3;
+      }
+      if (document.getElementById("Dec").checked){
+        count+=0;
+      }
+
+      if (document.getElementById("Loam").checked){
+        count+= 1;
+      }
+      if (document.getElementById("Clay").checked){
+        count+= 1;
+      }
+      if (document.getElementById("Sand").checked){
+        count+= 1;
+      }
+      if (document.getElementById("Silt").checked){
+        count+= 1;
+      }
+      if (document.getElementById("Peat").checked){
+        count+= 1;
+      }
+      if (document.getElementById("Chalk").checked){
+        count+= 1;
+      }
+
+      var one = document.getElementById("result5");
+         var two = document.getElementById("result15");
+         var three = document.getElementById("result25");
+         var four = document.getElementById("result");
+         if (count <= 5) {
+           one.style.display = "block";
+           two.style.display = "none";
+           three.style.display = "none";
+           four.style.display = "none";
+         } else if (count > 5 && count <= 15) {
+           one.style.display = "none";
+           two.style.display = "block";
+           three.style.display = "none";
+           four.style.display = "none";
+         } else if (count > 15 && count <= 25) {
+
+           one.style.display = "none";
+           two.style.display = "none";
+           three.style.display = "block";
+           four.style.display = "none";
+         } else if (count > 25) {
+
+           one.style.display = "none";
+           two.style.display = "none";
+           three.style.display = "none";
+           four.style.display = "block";
+
+
+    }
+}
+  </script>
+
+    </form>
+  </div>
+  <div id = "Suggestion">
+    <h3> How to farm more sustainably than ever? </h3>
+    <ul>
+      Buidling and maintaing healthy soil<br>
+      Managing water wisely<br>
+      Minimizing air, water, and climate pollution <br>
+      Promoting biodiversity
+    </ul>
+    <h4><p><strong> Besides environmental changes, there are also some noticbly changes
+      regarding technology <strong></p> </h4>
+      <ul>
+        Rotating crops and embracing diversity<br>
+        Planting cover crops<br>
+        Reducing or eliminating tillage<br>
+        Applying integrated pest management(IPM)<br>
+        Integrating crops<br>
+        Adopting agroforestry practices<br>
+         Managing whole systems and landscapes<br>
+      </ul>
+  </div>
+  <div id = "Community">
+    <h2> Find your Agricultural Community Near you! </h2>
+    <a href ="https://www.localharvest.org/csa/" target="_blank"><img src = "LocalHarvest.png"> </a>
+    <a href ="https://www.cargill.com/" target= "_blank"> <img src = "cargill.png"></a>
+  </div>
+
+  <div id = "Contact">
+    <p> <strong>email</strong>:info@teamnewbie.com | <strong>phone</strong>: 612-123-3456 |
+      <strong> Headquarters</strong>: PO BOX 1234 Minneapolis, MN 55414-1234</p>
+  </div>
+</body>
+
+</html>

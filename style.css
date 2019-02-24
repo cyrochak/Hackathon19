@@ -1,0 +1,156 @@
+.nav{
+  overflow:hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 300;
+}
+
+
+.nav a{
+  float: left;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 20px ;
+}
+
+.nav a.active, .btn:hover{
+  border-bottom: 3px solid Red;
+}
+
+body{
+  text-align: center;
+  background-color: #5deaf7;
+
+}
+.PhotoShow{
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+  margin-top: 0;
+  height: 100%
+  opacity: 0.5;
+  height: 100%
+  max-width: 100%;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.column {
+  position: relative;
+  float: left;
+  width: 24%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.Slides{
+  opacity: 0.5;
+  height: 100%
+  max-width: 100%;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.checkbox input{
+  margin: 0 5px 0 5px;
+}
+.checkbox label{
+  padding: 5px
+}
+.checkbox{
+text-align: center;
+}
+.soilcolumn {
+  position: relative;
+  float: left;
+  width: 16%;
+  padding: 5px;
+}
+.monthcolumn {
+  position: relative;
+  float: left;
+  width: 8%;
+  padding: 5px;
+}
+.Solution{
+  margin-top: auto;
+}
+.dataVis{
+      background-color: white;
+      height: 30px;
+      margin: 20px;
+    }
+    .chart {
+      background-color: white;
+      height: 600px;
+      margin: 20px;
+    }
+    .chartAnalysis {
+      background-color: white;
+      height: 300px;
+      margin: 20px 20px 20px 20px;
+      font-color: grey;
+    }
+    .par-text {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+class{
+  background-color: #5deaf7;
+}
+#result {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+#result5 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  display: none;
+}
+#result15 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+#result25 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  display: none;
+}
